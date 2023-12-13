@@ -6,6 +6,7 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
 import com.utility.ReadProperties_Utility;
+import com.utility.Utility;
 
 public class Login_Page {
 
@@ -31,14 +32,14 @@ public class Login_Page {
 	public void enterCredLogin() {
 
 		read = new ReadProperties_Utility();
-		username.sendKeys(read.getUsername());
-		password.sendKeys(read.getPassword());
+		Utility.sendKeys(driver, username, read.getUsername(), 5, false);
+		Utility.sendKeys(driver, password, read.getPassword(), 10, false);
 
 	}
 
 	public void clickLoginBtn() {
 
-		loginBtn.click();
+		Utility.clickElement(driver, loginBtn, 10);
 
 	}
 

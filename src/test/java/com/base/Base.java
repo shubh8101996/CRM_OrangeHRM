@@ -12,11 +12,9 @@ public class Base {
 
 	public static WebDriver driver;
 	ReadProperties_Utility read = new ReadProperties_Utility();
-
 	public String projectPath = System.getProperty("user.dir");
 	public String browser = read.getBrowserValue();
 	public String url = read.getUrl();
-
 
 	@BeforeClass
 	public void browserSetup() {
@@ -46,10 +44,14 @@ public class Base {
 
 	}
 
+	public static WebDriver getDriver() {
+		return driver;
+	}
+
 	@AfterClass
 	public void tearUp() {
 
-		driver.quit();
+//		driver.quit();
 
 	}
 
