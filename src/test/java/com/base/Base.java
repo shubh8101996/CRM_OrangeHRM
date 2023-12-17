@@ -51,7 +51,7 @@ public class Base {
 	@AfterClass
 	public void tearUp() {
 
-//		driver.quit();
+		driver.quit();
 
 	}
 

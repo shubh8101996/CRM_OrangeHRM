@@ -32,13 +32,16 @@ public class Login_Page {
 	public void enterCredLogin() {
 
 		read = new ReadProperties_Utility();
+		Utility.assertElementPresent(driver, username, 10);
 		Utility.sendKeys(driver, username, read.getUsername(), 5, false);
+		Utility.assertElementPresent(driver, password, 10);
 		Utility.sendKeys(driver, password, read.getPassword(), 10, false);
 
 	}
 
 	public void clickLoginBtn() {
 
+		Utility.assertElementPresent(driver, loginBtn, 10);
 		Utility.clickElement(driver, loginBtn, 10);
 
 	}
